@@ -1,0 +1,24 @@
+package service;
+
+import java.net.URL;
+import java.rmi.Remote;
+import java.util.Iterator;
+
+import javax.xml.namespace.QName;
+import javax.xml.rpc.Call;
+import javax.xml.rpc.ServiceException;
+import javax.xml.rpc.encoding.TypeMappingRegistry;
+import javax.xml.rpc.handler.HandlerRegistry;
+
+public class ClientWS {
+
+	public static void main(String[] args) {
+		
+		BanqueWS stub = new BanqueServiceServiceLocator().getBanqueWSPort();
+		double res = stub.conversionEuroToDh(600);
+		System.out.println(res);
+			
+	
+
+}
+}
